@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Firasans-Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: local("Roboto"),
+    url("/fonts/FiraSans-Regular.woff2") format("woff2"),
+    url("/fonts/FiraSans-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Firasans-Medium";
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: local("Roboto"),
+    url("/fonts/Firasans-Medium.woff2") format("woff2"),
+    url("/fonts/Firasans-Medium.woff") format("woff");
+}
