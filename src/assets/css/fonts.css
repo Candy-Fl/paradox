@@ -4,9 +4,9 @@
     font-style: normal;
     font-display: auto;
     unicode-range: U+000-5FF;
-    src: local("Roboto"),
-    url("/fonts/FiraSans-Regular.woff2") format("woff2"),
-    url("/fonts/FiraSans-Regular.woff") format("woff");
+    src: local("Firasans-Regular"),
+    url("../fonts/FiraSans-Regular.woff2") format("woff2"),
+    url("../fonts/FiraSans-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -15,7 +15,7 @@
     font-style: normal;
     font-display: auto;
     unicode-range: U+000-5FF;
-    src: local("Roboto"),
-    url("/fonts/Firasans-Medium.woff2") format("woff2"),
-    url("/fonts/Firasans-Medium.woff") format("woff");
+    src: local("Firasans-Medium"),
+    url("../fonts/FiraSans-Medium.woff2") format("woff2"),
+    url("../fonts/FiraSans-Medium.woff") format("woff");
 }

@@ -3,6 +3,7 @@
     <button :class="`documents-button__button`" @click="click">
       <img
         :class="`documents-button__icon ${iconClass}`"
+        :src="imageUrl"
       />
       <span class="documents-button__text">
         <slot/>
@@ -59,6 +60,10 @@ export default defineComponent({
     iconClass () {
       return this.isGroupOpened ? '_switch-down': '';
     },
+    imageUrl () {
+      const imageUrl = new URL(`../../assets/icons/${this.component}.svg`, import.meta.url).href;
+      return imageUrl;
+    },
 
     ButtonView () {
       return ButtonView;
@@ -68,7 +73,6 @@ export default defineComponent({
       if (this.view === ButtonView.BUTTON) {
         return 'icon-plus'
       }
-      console.log(this.view);
       return this.view;
     }
   },
@@ -103,7 +107,7 @@ export default defineComponent({
     font-size: 12px;
   }
 
-  &_iconFavorite {
+  &_icon-favorite {
     .documents-button__button {
       padding: 9px 10px 8px 10px;
     }
@@ -113,10 +117,10 @@ export default defineComponent({
     }
   }
 
-  &_iconDelete,
-  &_iconReplace,
-  &_iconDeleteDoc,
-  &_iconEdit {
+  &_icon-delete,
+  &_icon-replace,
+  &_icon-delete-doc,
+  &_icon-edit {
     .documents-button__button {
       border: none;
       padding: 0;
@@ -127,7 +131,7 @@ export default defineComponent({
     }
   }
 
-  &_iconArrow {
+  &_icon-arrow {
     .documents-button__button {
       padding: 8px 7px;
     }

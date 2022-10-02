@@ -17,6 +17,10 @@ export default defineConfig({
             return 'assets/images/[name]-[hash][extname]';
           }
 
+          if (/\.(woff|woff2)$/.test(name ?? '')){
+            return 'assets/fonts/[name][extname]';
+          }
+
           if (/\.css$/.test(name ?? '')) {
             return 'assets/css/[name]-[hash][extname]';
           }

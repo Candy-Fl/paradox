@@ -1,5 +1,6 @@
 <template>
   <div class="document-search">
+    <img class="document-search__icon" :src="searchUrl">
     <input class="document-search__input" v-model.trim="searchText" type="text">
     <DocumentsButton v-if="searchText.length" @pressed="clearSearch" :view="ButtonView.ICON_DELETE"/>
   </div>
@@ -22,6 +23,10 @@ export default defineComponent({
   computed: {
     ButtonView () {
       return ButtonView;
+    },
+    searchUrl () {
+      const imageUrl = new URL(`../../assets/icons/icon-search.svg`, import.meta.url).href;
+      return imageUrl;
     }
   },
   methods: {
