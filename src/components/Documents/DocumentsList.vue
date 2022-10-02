@@ -46,6 +46,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import type {PropType} from "vue";
 import type { DocumentsItemType } from "@/components/Documents/DocumentsItem.vue";
 import DocumentsItem from "@/components/Documents/DocumentsItem.vue";
 import { VueDraggableNext } from "vue-draggable-next";
@@ -56,11 +57,11 @@ export default defineComponent({
   name: "DocumentsList",
   props: {
     groupsList: {
-      type: Array,
+      type: Array as PropType<Array<DocumentsGroupType>>,
       default: () => [],
     },
     itemsList: {
-      type: Array,
+      type: Array as PropType<Array<DocumentsItemType>>,
       default: () => [],
     },
   },

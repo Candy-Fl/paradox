@@ -1,9 +1,8 @@
 <template>
   <div :class="`documents-button_${view}`">
     <button :class="`documents-button__button`" @click="click">
-      <component
+      <img
         :class="`documents-button__icon ${iconClass}`"
-        :is="component"
       />
       <span class="documents-button__text">
         <slot/>
@@ -22,41 +21,25 @@
  * @params {String} view - вариант отображения кнопки
  */
 import { defineComponent } from "vue";
-import IconPlus from "@/assets/icons/icon-plus.svg?component"
-import IconFavorite from "@/assets/icons/icon-favorite.svg?component"
-import IconDelete from "@/assets/icons/icon-delete.svg?component"
-import IconReplace from "@/assets/icons/icon-replace.svg?component"
-import IconEdit from "@/assets/icons/icon-edit.svg?component"
-import IconDeleteDoc from "@/assets/icons/icon-delete-doc.svg?component"
-import IconArrow from "@/assets/icons/icon-arrow.svg?component"
 
 export enum ButtonView {
   // Кнопка "избранное"
-  ICON_FAVORITE = "iconFavorite",
+  ICON_FAVORITE = "icon-favorite",
   // Кнопка с текстом
   BUTTON = "button",
   // Кнопка "Удалить текст"
-  ICON_DELETE = "iconDelete",
+  ICON_DELETE = "icon-delete",
   //  Кнопка удалить документ
-  ICON_DELETE_DOC = "iconDeleteDoc",
+  ICON_DELETE_DOC = "icon-delete-doc",
   // Кнопка перемещения документа
-  ICON_REPLACE = "iconReplace",
+  ICON_REPLACE = "icon-replace",
   // Кнопка редактировать документ
-  ICON_EDIT = "iconEdit",
+  ICON_EDIT = "icon-edit",
   // Кнопка раскрытия списка
-  ICON_ARROW = 'iconArrow',
+  ICON_ARROW = 'icon-arrow',
 }
 export default defineComponent({
   name: "DocumentsButton",
-  components: {
-    IconPlus,
-    IconFavorite,
-    IconDelete,
-    IconReplace,
-    IconEdit,
-    IconDeleteDoc,
-    IconArrow,
-  },
   data: () => {
     return {
       isGroupOpened: false,
@@ -82,22 +65,11 @@ export default defineComponent({
     },
 
     component () {
-      switch (this.view) {
-        case ButtonView.BUTTON:
-          return 'IconPlus';
-        case ButtonView.ICON_FAVORITE:
-          return 'IconFavorite';
-        case ButtonView.ICON_DELETE:
-          return 'IconDelete';
-        case ButtonView.ICON_DELETE_DOC:
-          return 'IconDeleteDoc';
-        case ButtonView.ICON_EDIT:
-          return 'IconEdit';
-        case ButtonView.ICON_REPLACE:
-          return 'IconReplace';
-        case ButtonView.ICON_ARROW:
-          return 'IconArrow';
+      if (this.view === ButtonView.BUTTON) {
+        return 'icon-plus'
       }
+      console.log(this.view);
+      return this.view;
     }
   },
   methods: {

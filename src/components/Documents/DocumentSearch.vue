@@ -1,6 +1,5 @@
 <template>
   <div class="document-search">
-    <IconSearch class="document-search__icon" />
     <input class="document-search__input" v-model.trim="searchText" type="text">
     <DocumentsButton v-if="searchText.length" @pressed="clearSearch" :view="ButtonView.ICON_DELETE"/>
   </div>
@@ -8,7 +7,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import IconSearch from "@/assets/icons/icon-search.svg?component"
 import DocumentsButton, { ButtonView } from "@/components/Documents/DocumentsButton.vue";
 
 export default defineComponent({
@@ -19,7 +17,6 @@ export default defineComponent({
     };
   },
   components: {
-    IconSearch,
     DocumentsButton,
   },
   computed: {
